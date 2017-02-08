@@ -119,10 +119,10 @@ static void si_shader_ls(struct si_shader *shader)
 	si_pm4_set_reg(pm4, R_00B520_SPI_SHADER_PGM_LO_LS, va >> 8);
 	si_pm4_set_reg(pm4, R_00B524_SPI_SHADER_PGM_HI_LS, va >> 40);
 
-	shader->ls_rsrc1 = S_00B528_VGPRS((shader->num_vgprs - 1) / 4) |
+	shader->rsrc1 = S_00B528_VGPRS((shader->num_vgprs - 1) / 4) |
 			   S_00B528_SGPRS((num_sgprs - 1) / 8) |
 		           S_00B528_VGPR_COMP_CNT(vgpr_comp_cnt);
-	shader->ls_rsrc2 = S_00B52C_USER_SGPR(num_user_sgprs) |
+	shader->rsrc2 = S_00B52C_USER_SGPR(num_user_sgprs) |
 			   S_00B52C_SCRATCH_EN(shader->scratch_bytes_per_wave > 0);
 }
 
@@ -1198,6 +1198,7 @@ static bool si_update_spi_tmpring_size(struct si_context *sctx)
 		si_get_max_scratch_bytes_per_wave(sctx);
 	unsigned scratch_needed_size = scratch_bytes_per_wave *
 		sctx->scratch_waves;
+	unsigned spi_tmpring_size;
 	int r;
 
 	if (scratch_needed_size > 0) {
@@ -1280,8 +1281,12 @@ static bool si_update_spi_tmpring_size(struct si_context *sctx)
 	assert((scratch_needed_size & ~0x3FF) == scratch_needed_size &&
 		"scratch size should already be aligned correctly.");
 
-	sctx->spi_tmpring_size = S_0286E8_WAVES(sctx->scratch_waves) |
-				S_0286E8_WAVESIZE(scratch_bytes_per_wave >> 10);
+	spi_tmpring_size = S_0286E8_WAVES(sctx->scratch_waves) |
+			   S_0286E8_WAVESIZE(scratch_bytes_per_wave >> 10);
+	if (spi_tmpring_size != sctx->spi_tmpring_size) {
+		sctx->spi_tmpring_size = spi_tmpring_size;
+		sctx->emit_scratch_reloc = true;
+	}
 	return true;
 }
 
