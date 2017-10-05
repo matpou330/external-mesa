@@ -142,3 +142,163 @@ ea08a296fe226f5e67366b4db420c2322f38774c radv: Handle VK_ATTACHMENT_UNUSED in co
 # fixes:  This commit is complex and has non trivial conflicts due to
 #         previous changes.
 df61a05019d5c7479d4b29d251af4231f125e61c radv: handle 10-bit format clamping workaround.
+
+# stable: 17.2 nomination only.
+611076a41aac3095a82dff2432943d7f8d429822 radv: disable support for VEGA for now.
+
+# stable: 17.2 nomination only.
+bc56dfbf3f20504fce13e0f1730eea05ea0ea69a i965: Mark all EGLimages as non-coherent.
+
+# stable: 17.2 nomination only.
+61d2f3f1c24323a1c067595ec78dfbfefdc72b41 i965/miptree: Return NONE from texture_aux_usage when fully resolved
+
+# stable: 17.2 nomination only.
+b040f51b61d4d5ee671ba9d862e871ac5ac67ddf ac/nir: fixup layer/viewport export for GFX9.
+
+# stable: 17.2 nomination only.
+2843c5d15cf7c051d6aaf0744c3c1c7d4a734184 radeonsi: update non-resident bindless descriptors if needed
+
+# stable: 17.2 nomination only.
+4734bfc02adad103efa1fa51e4c0f93fcaedb73c Android: Fix LLVM duplicated symbols linking for N and M
+
+# stable: 17.2 nomination only.
+0ae9ce0f29ea1973b850a4e6c6cae8606973036e i965/clear: Quantize the depth clear value based on the format
+
+# stable: 17.2 nomination only.
+fdef2f0fd19ac6f2715a802d1e14b8ddfa094f11 radeonsi/gfx9: properly handle imported textures with unexpected swizzle mode
+8dadb077908ad6d875577ca08e0e04a5741ba95b radeonsi: emit VGT_REUSE_OFF in the right place
+
+# stable: 17.2 nomination only.
+df09f1f3cd5110874899ed0f4b4c33ba9b006c50 radv/gfx9: use total levels in texture descriptor
+11834195e9c276e1f3756cf8f6161be14124261b radv/gfx9: fix level count in color register setup.
+d987b4ab9e240b479c71129c3c261982112c57d8 radv/gfx9: fixup db/stencil disable.
+864eb1852778abaa6f63ca106216001c9f375f05 radv: bump space check for indexed draw.
+9c080100d336e4f90575d5138508b519ed334eef radv/gfx9: emit sx_mrt_blend registers
+5378b5d0710be00d1316e42e692a52d4bc5d92fe radv: cleanup some image view descriptor setup.
+a74d98743115b928eaeabc0d58b63174158aa209 radv/image: don't rescale width/height if the format isn't changing
+bae7723e132d3177697606c799eabbb7cdde2f38 radv/gfx9: only minify image view width/height/depth before gfx9.
+5d26e0baf223b361c9919db213915a82d2dff5c4 radv: don't degrade tiling mode for small compressed or depth texture.
+8985ad494bce5a4c365fe38fdf500d8582b5a7d0 radv/gfx9: don't expose linear depth on vega.
+
+# stable: 17.2 nomination only.
+43595db30274f714e2b1f6120c2f5ec4c41614fe ac/nir: Cast sources of integer ops to int.
+
+# stable: 17.2 nomination only.
+19f6906c1e498499035e98929657e2faebe6c993 radv/gfx9: gfx9 has buffer sizing rules like pre-VI.
+
+# stable: 17.2 nomination only. Depends on earlier commit 76e2f390f98
+#         which did not land in branch.
+f24cf82d6db290a88abfff0669d2c5e2aa463901 i965/tex: Don't pass samples to miptree_create_for_teximage
+
+# stable: 17.2 nomination only. Depends on earlier commit f296c22989ff
+#         which did not land in branch.
+54c41af0aa92333579a72830254ac3aaa9f4aea1 i965: Make a BRW_NEW_FAST_CLEAR_COLOR dirty bit.
+
+# fixes: Depends on earlier commit 04a40f7d2a that did not land in
+#        branch and which exposes new API.
+3a5e3aa5a53cff55a5e31766d713a41ffa5a93d7 egl/drm: Fix misused x and y offsets in swrast_put_image2()
+fe2a6281b3b299998fe7399e7dbcc2077d773824 egl/drm: Fix misused x and y offsets in swrast_get_image()
+
+# stable: 17.2 nomination only.
+0ac78dc92582a59d4319ebce019b4caa41fb432d util: move string_to_uint_map to glsl
+
+# stable: 17.2 nomination only.
+88cdf16871a0f1cd8ec3844072051ee38e945600 llvmpipe: initialize llvmpipe->dirty with LP_NEW_SCISSOR
+
+# stable: 17.2 nomination only.
+dc9e08b0c3b04ba77ed59b8700e9f43edccb3168 freedreno: skip batch-cache for compute shaders
+
+# stable: 17.2 nomination only.
+d118ff876559e468d2d243470947eee53171fe57 radv: disable 1d/2d linear optimisation on gfx9.
+
+# stable: 17.2 nomination only.
+6d929d3f85604768971d04fa2548f02ffca1696e radv/gfx9: set descriptor up for base_mip to level range.
+
+# stable: 17.2 nomination only.
+e38685cc62e2a452521c49a3ad09d82495c6b1d0 Revert "radv: disable support for VEGA for now."
+
+# stable: 17.2 nomination only. Depends on earlier commit 43ef75b394f
+#         which did not land in branch.
+63e79a8a777b36ecb30a1f6900e6b638cb32fc5f nir: Fix system_value_from_intrinsic for subgroups
+
+# stable: 17.2 nomination only. Depends on earlier commit f37ede40bad
+#         which did not land in branch.
+52b65dfda84e4d433a332dd84596eef054eb5cbb i965: Fix crash in fallback GTT mapping.
+
+# stable: 17.2 nomination only. Depends on earlier commit 5b62eb237c52
+#         which did not land in branch.
+34124e412f00432ba8b3b8d16e3f2168aa596622 radeonsi/gfx9: always flush DB metadata on framebuffer changes
+
+# fixes: Depends on earlier commit 78bef01da2b that did not land in
+#        branch.
+ff23e03d60d264a64fce340c132404c6070050a0 radv: Fix vkCopyImage with both depth and stencil aspects.
+
+# fixes: References 166823bf but it is not really a bug fix, just an
+#        enhancement.
+45c5c444518b7e83d9accd9f44702fa49282a3b8 radeonsi/gfx9: proper workaround for LS/HS VGPR initialization bug
+
+# stable: 17.2 nomination only.
+e4018fdd85d8b58250c2cff8cdf4edd6b2b3c70b st/mesa: skip draw calls with pipe_draw_info::count == 0
+
+# stable: 17.2 nomination only.
+76ac8fafadca86941f2723f7f7176b22112f5c0c radv/winsys: use amdgpu_bo_va_op_raw.
+e8d57802fea60d4b353761ba1bdb08545733c007 radv/gfx9: allocate events from uncached VA space
+
+# stable: 17.2 nomination only.
+219d29e4d83d8c901f127c8a004c45c23c15751e radv: use simpler indirect packet 3 if possible.
+
+# fixes: References 391673af but it is not really a bug fix.
+17dd4856a68621ab7107975df8239fb2963a57bb radeonsi: don't always apply the PrimID instancing bug workaround on SI
+
+# stable: 17.2 nomination only. Depends on earlier commit 4fab67a4415
+#         which did not land in branch.
+d496780fb2c7f2cf0e32b6a79dc528e5156dfcb3 intel/eu/validate: Look up types on demand in execution_type()
+
+# stable: 17.2 nomination only.
+2f5b4490b59062f224e73f7a2d5cc0d8bd8eaa7b radv: don't use iview for meta image width/height.
+1bcb953e16600e0d9329b678a6eacee98d326547 radv: handle GFX9 1D textures
+
+# stable: 17.2 nomination only.
+ebd2a5354df64ef504f1e213afd2d6ab9d69a776 radv/gfx9: set mip0-depth correctly for 2d arrays/3d images
+
+# stable: 17.2 nomination only.
+3633bae36b56a8667d31096b3c3472ab388c4fbf radv/gfx9: fix image resource handling.
+
+# fixes: It only fixes documentation.
+85b66d20969685c26d3f7d22b6fc7b988872fa88 docs/egl: remove reference to EGL_DRIVERS_PATH
+
+# fixes: We don't really want to disable something unless it is
+#        causing a big problem.
+bee83b26611c0a4a554aa37c59187351242e82fd radv: Disable multilayer & multilevel DCC.
+
+# fixes: Depends on earlier commit dfc06d2fac that did not land in
+#        branch.
+1a172fb113554fa03053052b161d5e22fc2fcb1f radv: Don't allocate CMASK for linear images.
+
+# stable: 17.2 nomination only. Depends on earlier commit f187a4932
+#         which did not land in branch.
+cffc0ae0d9e572a82ce88c09e6ee8e2ed2a9be91 ac/surface: match Z and stencil tile config
+
+# stable: 17.2. nomination only.
+64d9bd149aa7f5a09f73cae07499577933722fb2 radv/nir: call opt_remove_phis after trivial continues.
+
+# fixes: Depends on earlier commit 13a28ff2368 that did not land in
+#        branch.
+94736d31c364635a76a11e0bd4f046a42d2221d5 amd/common: add workaround for cube map array layer clamping
+
+# stable: 17.2 nomination only. Depends on earlier commit 5cb2eee557
+#         which did not land in branch.
+6fb0c1013b3578c5bd264efaa99a6d68418ccfb1 radeonsi: workaround for gather4 on integer cube maps
+
+# stable: 17.2 nomination only.
+c1b01370486d203a6bccff2161afb288cfda1de3 Scons: Add LLVM 5.0 support
+
+# stable: 17.2 nomination only.
+c4ac522511d20683c09441a9e96ddfbc1b540c00 ac/surface: handle S8 on gfx9
+
+# fixes:  This commit addressed an earlier commit 1bcb953e166 which did not
+#         land in branch.
+979978ee06867a531b8d56cee252f5c83920a339 radv: Check for GFX9 for 1D arrays in image_size intrinsic.
+
+# This commit is causing several regressions on i965 driver
+15cae12804ef288c7fb4cb9a38f7e32e6d8c4dc1 glsl/linker: fix output variable overlap check
