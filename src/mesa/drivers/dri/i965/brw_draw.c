@@ -386,7 +386,7 @@ brw_postdraw_set_buffers_need_resolve(struct brw_context *brw)
       struct intel_renderbuffer *irb =
          intel_renderbuffer(fb->_ColorDrawBuffers[i]);
 
-      if (!irb)
+      if (!irb || !irb->mt)
          continue;
      
       brw_render_cache_set_add_bo(brw, irb->mt->bo);

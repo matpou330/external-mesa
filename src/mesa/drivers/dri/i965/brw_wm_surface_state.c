@@ -196,6 +196,7 @@ brw_update_renderbuffer_surface(struct brw_context *brw,
    struct gl_context *ctx = &brw->ctx;
    struct intel_renderbuffer *irb = intel_renderbuffer(rb);
    struct intel_mipmap_tree *mt = irb->mt;
+   if (!irb || !mt) return 0;
 
    if (brw->gen < 9) {
       assert(!(flags & INTEL_AUX_BUFFER_DISABLED));

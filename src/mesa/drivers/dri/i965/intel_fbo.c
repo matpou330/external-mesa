@@ -157,6 +157,7 @@ intel_map_renderbuffer(struct gl_context *ctx,
    } else {
       mt = irb->mt;
    }
+   if (!mt) return;
 
    /* For a window-system renderbuffer, we need to flip the mapping we receive
     * upside-down.  So we need to ask for a rectangle on flipped vertically, and

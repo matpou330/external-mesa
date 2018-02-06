@@ -788,6 +788,7 @@ do_single_blorp_clear(struct brw_context *brw, struct gl_framebuffer *fb,
 {
    struct gl_context *ctx = &brw->ctx;
    struct intel_renderbuffer *irb = intel_renderbuffer(rb);
+   if (!irb || !irb->mt) return false;
    mesa_format format = irb->mt->format;
    uint32_t x0, x1, y0, y1;
 
